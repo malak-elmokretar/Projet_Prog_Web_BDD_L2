@@ -1,0 +1,34 @@
+header {
+	background-color : #c03030;
+}
+
+footer {
+	background-color : #0b6350;
+	height : 100px;
+}
+
+body {
+	background-color : #54d6b9;
+}
+
+.titre {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 400%;
+	font-weight: bold;
+	text-align: center;
+	margin: auto;
+}
+
+.menu {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    background-color: #a5aab0; 
+}
+
+.menu .navbar-brand {
+    font-weight: 500; 
+    color: #333;
+}
+
+.menu .navbar-brand:hover {
+    color: #0d6efd;
+}

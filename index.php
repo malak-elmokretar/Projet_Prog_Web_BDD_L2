@@ -1,5 +1,5 @@
 <?php
-$titre = 'Accueil'; 
+$titre = "Let's go"; 
 $racine_path = './';
 ?>
 		
@@ -7,7 +7,7 @@ $racine_path = './';
 
 <?php 
 $main = "<p>retrouvez ici des destinations !! </p>"; 
-$pageariane = 'Accueil';
+$pageariane = 'Votre agence de voyage préférée ';
 /*view*/  include($racine_path.'view/main.php');
 
 ?>
