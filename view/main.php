@@ -1,5 +1,5 @@
 <main>	
-	<header><?php echo $pageariane; ?> </header>
+	<div><?php echo $pageariane; ?> </div>
 	<?php echo $main; ?>
 
 </main>

@@ -1,4 +1,4 @@
-<footer class="bg-primary text-white text-center mt-auto py-3">
+<footer class=" text-white text-center mt-auto py-3">
   <p class="mb-0">
 	<i class="bi bi-c-circle-fill"></i>
     2026, retrouvez nous sur :

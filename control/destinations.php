@@ -4,7 +4,8 @@
 	/*view*/ include($racine_path."view/header.php");
 	
 	echo '<main>';
-	
+	echo '<div class="container"><div class="row">';
+
 	// (( récupérer les destinations dans la base de donnée : $animaux (nom, descption courte, id, lien image) ))
 	// Dans un for pour chaque destinations : $destination:
 	//--> en attendant données dans un tableau
@@ -42,8 +43,7 @@
     include($racine_path."view/carte_destination.php");
 }
 
-echo '</div>';
-echo '</div>';
+echo '</div></div>';
 echo '</main>';
 /*view*/ include($racine_path."view/footer.php");
 
