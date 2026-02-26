@@ -5,7 +5,6 @@
             <h5 class="card-title"><?php echo $nom_dest; ?></h5>
             <p class="card-text"><?php echo $description_courte_dest; ?></p>
             <p class="card-text"><strong>Point fort : </strong><?php echo $fort_dest; ?></p>
-            <a href="#" class="btn btn-primary">Voir plus</a>
-        </div>
+<a href="../control/destination.php?id=<?php echo $destination['id']; ?>" class="btn btn-primary">Voir plus</a>        </div>
     </div>
 </div>
