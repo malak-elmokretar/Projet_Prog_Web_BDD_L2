@@ -9,14 +9,14 @@
 		<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 		 insérer son propre CSS -->
-<link rel="stylesheet" href="<?php echo $racine_path.'view/CSS/template.css?v='.time(); ?>">	</head>
+<link rel="stylesheet" href="<?php echo $racine_path.'view/CSS/template.css'; ?>">	</head>
 	
 	
 	<body class="d-flex flex-column min-vh-100">
 	
 	<header class="menuhead">
 		<div class="d-flex align-items-center w-100">
-			<img src="../view/images/logo.png" alt="Logo" class="logo img-fluid me-3">
+			<img src="<?php echo $racine_path.'view/images/logo.png';?>" alt="Logo" class="logo img-fluid me-3">
         	<h1 class="titre"><?php echo $titre; ?></h1>
 			<?php include("menu.php"); ?>
 		</div>
