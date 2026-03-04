@@ -1,0 +1,87 @@
+:root {
+    --green-500: #198754;
+
+    --green-100: color-mix(in srgb, var(--green-500), white 80%);
+    --green-200: color-mix(in srgb, var(--green-500), white 60%);
+    --green-300: color-mix(in srgb, var(--green-500), white 40%);
+    --green-400: color-mix(in srgb, var(--green-500), white 20%);
+
+    --green-600: color-mix(in srgb, var(--green-500), black 20%);
+    --green-700: color-mix(in srgb, var(--green-500), black 40%);
+    --green-800: color-mix(in srgb, var(--green-500), black 60%);
+    --green-900: color-mix(in srgb, var(--green-500), black 80%);
+}
+header {
+	background-color : var(--green-500);
+}
+
+.logo {
+    max-height: 100px; 
+    width: auto; 
+}
+
+.menuhead {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--green-500);
+}
+
+main {
+    padding: 2rem;
+    margin-bottom: 50px;
+    text-align: center; 
+}
+
+main div, main p {
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+footer {
+	background-color : var(--green-800);
+	height : 50px;
+}
+
+body {
+	background-color : var(--green-100);
+}
+
+.titre {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 400%;
+	font-weight: bold;
+	text-align: center;
+	margin: center;
+}
+
+.menu {
+    margin-left:auto; 
+    background-color: var(--green-300);
+    padding: 0.5rem 1rem;
+	position: relative;
+}
+.menu .navbar-brand {
+    font-weight: 500; 
+    color: #ffffff;
+}
+
+.menu .navbar-brand:hover {
+    color:var(--green-100);
+}
+
+.card.carte {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card.carte:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover; 
+    width: 100%;
+}
