@@ -67,4 +67,4 @@ $destinations=[
 			'img' =>'londres.jpg',
 		],
 	];
-    ?>
+?>

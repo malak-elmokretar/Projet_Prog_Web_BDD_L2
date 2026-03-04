@@ -85,3 +85,27 @@ body {
     object-fit: cover; 
     width: 100%;
 }
+
+.img-home{
+    max-height: 400px;
+    width: auto;
+}
+
+.section-box {
+    width: 75%;
+    padding: 40px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.users-section {
+    background-color: var(--green-200);
+}
+
+.destinations-section {
+    background-color: var(--green-300);
+}
+
+.faq-section {
+    background-color: var(--green-100);
+}
