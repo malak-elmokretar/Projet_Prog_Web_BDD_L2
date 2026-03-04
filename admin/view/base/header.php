@@ -13,7 +13,7 @@
 	
 	<header class="menuhead">
 		<div class="d-flex align-items-center w-100">
-			<img src="<?php echo $racine_path.'../view/images/logo.png';?>" alt="Logo" class="logo img-fluid me-3">
+			<a href="<?php echo $racine_path.'index.php';?>"><img src="<?php echo $racine_path.'./view/images/logo.png';?>" alt="Logo" class="logo img-fluid me-3"></a>
         	<h1 class=" text-center flex-grow-1 mb-0 titre"><?php echo $titre; ?></h1>
 			<?php include("menu.php"); ?>
 		</div>
