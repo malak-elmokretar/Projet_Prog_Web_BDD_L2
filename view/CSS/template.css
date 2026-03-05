@@ -109,3 +109,14 @@ body {
 .faq-section {
     background-color: var(--green-100);
 }
+
+.btn-primary{
+    background-color: var(--green-400);
+    border: var(--green-400);
+}
+
+.btn-primary:hover{
+    background-color: var(--green-200);
+    border: var(--green-200);
+    color: black;
+}
