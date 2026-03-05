@@ -2,19 +2,13 @@
 
     <div class="section-box users-section mb-5">
         <h3>Utilisateurs</h3>
-        <a href="<?php echo $racine_path.'./control/utilisateurs/utilisateurs.php';?>" class="btn btn-dark mt-3">
-            Voir les utilisateurs
-        </a>
+        <a href="<?php echo $racine_path.'./control/utilisateurs/utilisateurs.php';?>" class="btn btn-dark mt-3">Voir les utilisateurs</a>
     </div>
     
     <div class="section-box destinations-section mb-5">
         <h3>Destinations</h3>
-        <a href="<?php echo $racine_path.'./control/destinations/destinations.php';?>" class="btn btn-dark mt-3 me-2">
-            Voir les destinations
-        </a>
-        <a href="<?php echo $racine_path.'./control/destinations/creation_destination.php';?>" class="btn btn-outline-dark mt-3">
-            Ajouter une destination
-        </a>
+        <a href="<?php echo $racine_path.'./control/destinations/destinations.php';?>" class="btn btn-dark mt-3 me-2">Voir les destinations</a>
+        <a href="<?php echo $racine_path.'./control/destinations/creation_destination.php';?>" class="btn btn-outline-dark mt-3">Ajouter une destination</a>
     </div>
     
     <div class="section-box faq-section mb-5">

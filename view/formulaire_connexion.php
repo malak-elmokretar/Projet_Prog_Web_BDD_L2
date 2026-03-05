@@ -1,5 +1,5 @@
 <div class="container mt-5 d-flex flex-column align-items-center text-center">
-    <form action="<?php echo $action;?>" method="<?php echo $method;?>">
+  <form action="<?php echo $action;?>" method="<?php echo $method;?>">
    
     <div class="mb-3">
       <label for="email" class="form-label">Adresse e-mail :</label>
@@ -18,5 +18,5 @@
       <p>Pas encore de compte ? <a href="<?php echo $racine_path.'control/inscription.php'; ?>">S'inscrire</a></p>
     </div>
     <button type="submit" class="btn btn-primary">Se connecter</a></button>
-</form>
+  </form>
 </div>

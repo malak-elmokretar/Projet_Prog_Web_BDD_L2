@@ -13,12 +13,12 @@
 
 
 	foreach ($destinations as $destination) {
-    $nom_dest = $destination['nom'];
-    $description_courte_dest = $destination['descr'];
-    $image_dest = $destination['img'];
-    $fort_dest = $destination['fort'];
-    include($racine_path."view/carte_destination.php");
-}
+		$nom_dest = $destination['nom'];
+    	$description_courte_dest = $destination['descr'];
+    	$image_dest = $destination['img'];
+    	$fort_dest = $destination['fort'];
+    	include($racine_path."view/carte_destination.php");
+	}
 
 echo '</div></div>';
 echo '</main>';
