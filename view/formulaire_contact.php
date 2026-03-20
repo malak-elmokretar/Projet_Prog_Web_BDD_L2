@@ -12,7 +12,7 @@
 
 		<div class="form-floating mb-3">
 			<label for="message" class="form-label">Message :</label>
-			<textarea class="form-control long_texte" id="message"></textarea>
+			<textarea class="form-control long_texte" id="message" required></textarea>
 			<label for="floatingTextarea2">Message</label>
 		</div>
 
