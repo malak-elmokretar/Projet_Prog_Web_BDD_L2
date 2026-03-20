@@ -16,7 +16,7 @@ header {
 }
 
 .logo {
-    max-height: 60px; 
+    max-height: 100px; 
     width: auto; 
 }
 
@@ -28,7 +28,14 @@ header {
 }
 
 main {
-    padding-top: 2rem; /* Espacement en haut du main */
+    padding: 2rem;
+    margin-bottom: 50px;
+    text-align: center; 
+}
+
+main div, main p {
+    max-width: 800px;
+    margin: 0 auto; 
 }
 
 footer {
@@ -45,7 +52,7 @@ body {
 	font-size: 400%;
 	font-weight: bold;
 	text-align: center;
-	margin: auto;
+	margin: center;
 }
 
 .menu {
@@ -77,4 +84,39 @@ body {
     height: 300px;
     object-fit: cover; 
     width: 100%;
+}
+
+.img-home{
+    max-height: 400px;
+    width: auto;
+}
+
+.section-box {
+    width: 75%;
+    padding: 40px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.users-section {
+    background-color: var(--green-200);
+}
+
+.destinations-section {
+    background-color: var(--green-300);
+}
+
+.faq-section {
+    background-color: var(--green-100);
+}
+
+.btn-primary{
+    background-color: var(--green-400);
+    border: var(--green-400);
+}
+
+.btn-primary:hover{
+    background-color: var(--green-200);
+    border: var(--green-200);
+    color: black;
 }

@@ -26,3 +26,5 @@ echo '</main>';
 
 /*view*/ include($racine_path."view/footer.php");
 ?>
+
+
