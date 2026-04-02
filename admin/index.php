@@ -7,5 +7,6 @@
     $pageariane = "Accueil";
     include($racine_path.'view/base/main.php');
     include($racine_path.'view/base/footer.php');
+    require_once $racine_path."class/Autoloader.php";
 
 ?>

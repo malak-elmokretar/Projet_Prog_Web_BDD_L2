@@ -1,5 +1,10 @@
 <?php
 
+require_once "/class/Autoloader.php";
+Autoloader::enregistrer();
+
+namespace class;
+
 class Utilisateur implements UtilisateurInterface{
     $id_user;
     $nom;

@@ -1,6 +1,6 @@
 <?php
 
-class UtilisateurDB {
+class UtilisateurDB implements UtilisateurDBInterface {
     $id_user;
     $nom;
     $prenom;
@@ -21,37 +21,11 @@ class UtilisateurDB {
         $this->mdp = $mdp; 
     }
 
-    // destructeur
-    //  s'exécute soit :                        soit : 
-    // lors de l'appel de la méthode unset()    à la fin du fichier
-    function __destruct(){
-        echo "<p>Suppression de l'utilisateur-ice $this->nom $this->prenom</p>";
-    }
-    
-    // méthode magique:
-    // _toString()
-    // echo
-    // retourne string
-    function _toString(){
-        return "$this->nom $this->prenom";
-    }
-
-    //var_dump
-    // return array
-    function __debugInfo(){
-        return ["identite" => "$this->nom $this->prenom"];
-    }
-
-    function __get($name){
-        echo "$name n'existe pas"; 
-    }
-
-    function __set($name, $val){
-        echo "$name n'existe pas"
-    }
-
+    $instr=$pdo->prepare("SELECT * FROM webutilisateur");
+    $instr->execute();
+    $destinations = $instr->fetchAll(PDO::FETCH_ASSOC);
     function inscription($id_user, $nom, $prenom, $dateNaiss, $role, $login, $mdp){
-        
+        $requete = $pdo->prepare("INSERT INTO webutilisateur (nom, prenom, dateNaiss, role, login, mdp) VALUES (:")
     }
 }
 

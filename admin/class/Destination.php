@@ -1,12 +1,16 @@
 <?php
 
+require_once "/class/Autoloader.php";
+Autoloader::enregistrer();
+namespace class;
+
 class Destination implements DestinationInterface{
-    $id_destination;
-    $nom;
-    $descr;
-    $description;
-    $fort;
-    $img;
+    public $id_destination;
+    public $nom;
+    public $descr;
+    public $description;
+    public $fort;
+    public $img;
 
 
     //  le constructeur permet d'initialiser les attributs
@@ -30,23 +34,71 @@ class Destination implements DestinationInterface{
     // _toString()
     // echo
     // retourne string
-    function _toString(){
+    function __toString(){
         return "$this->nom $this->descr";
     }
 
     //var_dump
     // return array
     function __debugInfo(){
-        return ["identite" => "$this->nom $this->prenom"];
+        return ["destination" => "$this->nom"];
     }
 
-    function __get($name){
-        echo "$name n'existe pas"; 
+    ////////
+    //////// j'ai modifié les get et set 
+    function __get($name, $val){
+		if(isset($this->$name)){
+			return $this->name;
+		}
+		else{
+			echo "$name n'existe pas";
+		}
+	}
+
+    public fonction getIdDest(){
+        return $this->id_destination;
+    }
+    public fonction getNom(){
+        return $this->nom;
+    }
+    public fonction getDescr(){
+        return $this->descr;
+    }
+    public fonction getDescription(){
+        return $this->description;
+    }
+    public fonction getFort(){
+        return $this->fort;
+    }
+    public fonction getImg(){
+        return $this->img;
     }
 
     function __set($name, $val){
-        echo "$name n'existe pas"
+		if(isset($this->$name)){
+			$this->name=$val;
+		}
+		else{
+			echo " $name n'existe pas";
+		}
+	}
+
+    public fonction setNom($nom){
+        $this->nom=$nom;
     }
+    public fonction setDescr($descr){
+        $this->descr=descr;
+    }
+    public fonction setDescription(){
+        $this->description=description;
+    }
+    public fonction setFort($fort){
+        $this->fort=fort;
+    }
+    public fonction setImg(){
+        $this->img=img;
+    }
+
 }
 
-?>
+?> 
