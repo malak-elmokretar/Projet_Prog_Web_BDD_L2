@@ -129,5 +129,17 @@ class UtilisateurDB implements UtilisateurDBInterface {
         }
         return null;
     }
+
+    function verifierConnexionA($mail, $mdp_saisi) {
+        $utilisateur = $this->getUtilisateurByMail($mail);
+
+        if ($utilisateur && password_verify($mdp_saisi, $utilisateur->getMdp())) {
+            if($utilisateur->getRoleA()=='t'){
+                return $utilisateur;
+            }
+            return null;
+        }
+        return null;
+    }
 }
 ?>
