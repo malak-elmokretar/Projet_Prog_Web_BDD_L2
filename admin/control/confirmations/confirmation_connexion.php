@@ -19,12 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail= $_POST['mail'] ?? '';
     $mdp = $_POST['mdp']  ?? '';
 
-    $utilisateur = $userModel->verifierConnexion($mail, $mdp);
-
-    if ($utilisateur) {
+    $utilisateur = $userModel->verifierConnexionA($mail, $mdp);
+   
+        if ($utilisateur) {
         echo "<p>Bon retour parmi nous !</p>";
     } else {
-        echo "<p>Identifiants incorrects. <a href='" . $racine_path . "control/connexion.php'>Réessayer</a></p>";
+        echo "<p>Identifiants incorrects ou alors vous n'etes pas admim !. <a href='" . $racine_path . "control/connexion.php'>Réessayer</a></p>";
     }
 
 } else {
