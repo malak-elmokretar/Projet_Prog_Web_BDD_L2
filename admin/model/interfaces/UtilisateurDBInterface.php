@@ -10,6 +10,8 @@ interface UtilisateurDBInterface {
     public function modifUtilisateur(Utilisateur $utilisateur);
     public function supprimerUtilisateur($id);
     public function verifierConnexion($mail, $mdp_saisi);
-}
+    public function verifierConnexionA($mail, $mdp_saisi);
+
+    }
 ?>
  
