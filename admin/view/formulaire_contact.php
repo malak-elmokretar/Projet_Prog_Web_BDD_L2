@@ -4,6 +4,16 @@
 			<label for="name" class="form-label">Nom</label>	
 			<input type="text" class="form-control" id="name" name="name" required>	
 		</div>
+
+		<div class="mb-3">
+			<label for="prenom" class="form-label">Prénom</label>	
+			<input type="text" class="form-control" id="prenom" name="prenom" required>	
+		</div>
+
+		<div class="mb-3">
+			<label for="objet" class="form-label">Objet</label>	
+			<input type="text" class="form-control" id="objet" name="objet" required>	
+		</div>
 	
 		<div class="mb-3">
 			<label for="mail" class="form-label">Adresse Mail</label>	
@@ -12,8 +22,7 @@
 	
 		<div class="form-floating mb-3">
 			<label for="message" class="form-label">Message :</label>
-			<textarea class="form-control long_texte" id="message" required></textarea>
-			<label for="floatingTextarea2">Message</label>
+			<textarea class="form-control long_texte" id="message" name="message" required></textarea>
 		</div>
 	
 		<div class="d-grid">
