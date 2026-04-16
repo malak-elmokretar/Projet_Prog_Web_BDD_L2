@@ -31,5 +31,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+    <button type="submit" class="btn btn-danger">Supprimer mon compte</button>
+
   </form>
 </div>
