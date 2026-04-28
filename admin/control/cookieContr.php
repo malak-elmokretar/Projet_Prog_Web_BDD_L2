@@ -11,12 +11,11 @@ if ($action === 'tout_accepter') {
     enregistrerConsentement(false, false);
 
 } elseif ($action === 'choisir') {
-    $preferences  = isset($_POST['preferences']);   // true si case cochée
-    $statistiques = isset($_POST['statistiques']);  // true si case cochée
+    $preferences  = isset($_POST['preferences']);
+    $statistiques = isset($_POST['statistiques']);
     enregistrerConsentement($preferences, $statistiques);
 }
 
-// Retour à la page précédente
 $retour = $_SERVER['HTTP_REFERER'] ?? $racine_path . 'index.php';
 header('Location: ' . $retour);
 exit;

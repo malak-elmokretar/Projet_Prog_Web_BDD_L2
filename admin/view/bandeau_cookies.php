@@ -7,17 +7,9 @@
             🍪 Ce site utilise des cookies. Choisissez ceux que vous acceptez :
         </p>
 
-        <form method="POST" action="<?php echo $racine_path; ?>admin/control/cookieContr.php">
+        <form method="POST" action="<?php echo $racine_path; ?>/control/cookieContr.php">
 
             <div class="d-flex flex-column flex-md-row gap-3 mb-3">
-
-                <!-- Fonctionnels : toujours cochés, désactivés -->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked disabled>
-                    <label class="form-check-label">
-                        Fonctionnels <span class="text-warning">(obligatoires)</span>
-                    </label>
-                </div>
 
                 <!-- Préférences -->
                 <div class="form-check">
