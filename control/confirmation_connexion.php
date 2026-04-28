@@ -1,5 +1,8 @@
 <?php
+session_start();
 $racine_path = '../';
+require_once $racine_path . 'csrf.php';
+
 require_once $racine_path . 'cookies.php';
 require_once $racine_path . 'admin/model/Connect.php';
 require_once $racine_path . 'admin/model/UtilisateurDB.php';
@@ -11,6 +14,12 @@ use model\UtilisateurDB;
 $connect = new Connect();
 $db      = $connect->getConn();
 $userModel = new UtilisateurDB($db);
+
+if (!verifierTokenCsrf($_POST['csrf_token'] ?? '')) {
+    http_response_code(403);
+    die("Requête invalide.");
+}
+supprimerTokenCsrf();
 
 $titre = "Connexion";
 include($racine_path . "view/header.php");
@@ -24,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($utilisateur) {
         // Connexion réussie : on crée le cookie de session
-        creerCookieSession($utilisateur->getId());
+        creerCookieSession($utilisateur->getIdUtilisateur());
         echo "<p>Bon retour parmi nous !</p>";
     } else {
         echo "<p>Identifiants incorrects. <a href='" . $racine_path . "control/connexion.php'>Réessayer</a></p>";

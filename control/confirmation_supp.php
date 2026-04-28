@@ -4,9 +4,18 @@
     require_once $racine_path . 'admin/model/Connect.php';
     require_once $racine_path . 'admin/model/UtilisateurDB.php';
     require_once $racine_path . 'admin/class/Utilisateur.php';
+    require_once $racine_path . 'csrf.php';
+
 
     use \model\Connect;
     use model\UtilisateurDB;
+
+
+    if (!verifierTokenCsrf($_POST['csrf_token'] ?? '')) {
+    http_response_code(403);
+    die("Requête invalide.");
+    }
+    supprimerTokenCsrf();
 
     $connect = new Connect();
     $db = $connect->getConn();

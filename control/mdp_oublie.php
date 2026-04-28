@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	$racine_path = '../';
 	$titre = 'Formulaire de contact';
 	/*view*/ include($racine_path."view/header.php");

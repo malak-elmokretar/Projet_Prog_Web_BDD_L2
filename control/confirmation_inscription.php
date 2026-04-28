@@ -1,8 +1,11 @@
 <?php
+session_start();
+
 $racine_path = '../';
 require_once $racine_path . 'admin/model/Connect.php';
 require_once $racine_path . 'admin/model/UtilisateurDB.php';
 require_once $racine_path . 'admin/class/Utilisateur.php';
+require_once $racine_path . 'csrf.php';
 
 use model\Connect;
 use model\UtilisateurDB;
@@ -11,6 +14,13 @@ use model\Utilisateur;
 $connect=new Connect();
 $db=$connect->getConn();
 $userModel=new UtilisateurDB($db);
+
+if (!verifierTokenCsrf($_POST['csrf_token'] ?? '')) {
+    http_response_code(403);
+    die("Requête invalide.");
+}
+supprimerTokenCsrf();
+
 
 $titre="Inscription";
 include($racine_path . "view/header.php");

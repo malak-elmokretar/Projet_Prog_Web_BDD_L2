@@ -6,6 +6,8 @@
 		exit;
 	}
 
+	require_once $racine_path . 'csrf.php';
+
 	require_once("../admin/model/Connect.php");
 	require_once("../admin/model/UtilisateurDB.php");
 	require_once("../admin/class/Utilisateur.php");
@@ -17,6 +19,11 @@
 	$connect = new Connect();
 	$db = $connect->getConn();
 
+	if (!verifierTokenCsrf($_POST['csrf_token'] ?? '')) {
+		http_response_code(403);
+		die("Requête invalide.");
+	}
+	supprimerTokenCsrf();
 	$udb = new UtilisateurDB($db);
 
 	$ancienUser = $udb->getUtilisateurById($_POST['id']);
