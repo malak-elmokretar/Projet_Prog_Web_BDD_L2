@@ -1,6 +1,7 @@
 <div class="container mt-5 d-flex flex-column align-items-center text-center">
 
   <form action="<?php echo $action;?>" method="<?php echo $method;?>">
+    <input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">
     
     <div class="mb-3">
       <label for="nomUser" class="form-label">Nom :</label>

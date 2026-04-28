@@ -11,14 +11,6 @@
 
             <div class="d-flex flex-column flex-md-row gap-3 mb-3">
 
-                <!-- Fonctionnels : toujours cochés, désactivés -->
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" checked disabled>
-                    <label class="form-check-label">
-                        Fonctionnels <span class="text-warning">(obligatoires)</span>
-                    </label>
-                </div>
-
                 <!-- Préférences -->
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="preferences" value="1" id="cb-preferences">
@@ -38,15 +30,12 @@
             </div>
 
             <div class="d-flex gap-2">
-                <!-- Valider les choix des cases cochées -->
                 <button type="submit" name="action" value="choisir" class="btn btn-warning">
                     Valider mes choix
                 </button>
-                <!-- Tout accepter d'un coup -->
                 <button type="submit" name="action" value="tout_accepter" class="btn btn-outline-light">
                     Tout accepter
                 </button>
-                <!-- Tout refuser -->
                 <button type="submit" name="action" value="tout_refuser" class="btn btn-outline-secondary">
                     Tout refuser
                 </button>

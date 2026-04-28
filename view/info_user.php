@@ -2,6 +2,7 @@
 
   <form action="<?php echo $action; ?>" method="<?php echo $method; ?>">
     <input type="hidden" name="id" value="<?php echo $user->getIdUtilisateur(); ?>">
+    <input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">
 
     <div class="mb-3">
       <label for="nomUser" class="form-label">Nom :</label>
