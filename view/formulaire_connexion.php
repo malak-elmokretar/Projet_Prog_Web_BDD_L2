@@ -18,6 +18,6 @@
       <br>
       <p>Pas encore de compte ? <a href="<?php echo $racine_path.'control/inscription.php'; ?>">S'inscrire</a></p>
     </div>
-    <button type="submit" class="btn btn-primary">Se connecter</a></button>
+    <button type="submit" class="btn btn-primary">Se connecter</button>
   </form>
 </div>

@@ -1,73 +1,61 @@
 <?php
-	session_start();
+    $racine_path = '../';
+    $titre = "Modification effectuée !";
 
-	if (!isset($_SESSION['id'])) {
-		header("Location: connexion.php");
-		exit;
-	}
+    require_once $racine_path . 'csrf.php';
+    require_once $racine_path . "admin/model/Connect.php";
+    require_once $racine_path . "admin/model/UtilisateurDB.php";
+    require_once $racine_path . "admin/class/Utilisateur.php";
 
-	require_once $racine_path . 'csrf.php';
+    use model\Connect;
+    use model\UtilisateurDB;
+    use model\Utilisateur;
 
-	require_once("../admin/model/Connect.php");
-	require_once("../admin/model/UtilisateurDB.php");
-	require_once("../admin/class/Utilisateur.php");
+    include($racine_path . "view/header.php");
 
-	use model\Connect;
-	use model\UtilisateurDB;
-	use model\Utilisateur;
+    if (!isset($_SESSION['user_id'])) {
+        echo "<script>window.location.href='../control/connexion.php';</script>";
+        exit;
+    }
 
-	$connect = new Connect();
-	$db = $connect->getConn();
+    if (!verifierTokenCsrf($_POST['csrf_token'] ?? '')) {
+        http_response_code(403);
+        die("Requête invalide.");
+    }
+    supprimerTokenCsrf();
 
-	if (!verifierTokenCsrf($_POST['csrf_token'] ?? '')) {
-		http_response_code(403);
-		die("Requête invalide.");
-	}
-	supprimerTokenCsrf();
-	$udb = new UtilisateurDB($db);
+    $connect = new Connect();
+    $db = $connect->getConn();
+    $udb = new UtilisateurDB($db);
 
-	$ancienUser = $udb->getUtilisateurById($_POST['id']);
+    $ancienUser = $udb->getUtilisateurById($_POST['id']);
 
-	if (!$ancienUser) {
-		$message = "Utilisateur introuvable.";
-	} else {
+    if (!$ancienUser) {
+        $message = "Utilisateur introuvable.";
+    } else {
+        $nom    = trim($_POST['nom']);
+        $prenom = trim($_POST['prenom']);
+        $mail   = trim($_POST['mail']);
+        $date   = $_POST['date_naissance'];
+        $mdp    = $_POST['mdp'];
 
-		$nom = trim($_POST['nom']);
-		$prenom = trim($_POST['prenom']);
-		$mail = trim($_POST['mail']);
-		$date = $_POST['date_naissance'];
-		$mdp = $_POST['mdp'];
+        $mdpFinal = empty($mdp)
+            ? $ancienUser->getMdp()
+            : password_hash($mdp, PASSWORD_DEFAULT);
 
-		if (empty($mdp)) {
-			$mdpFinal = $ancienUser->getMdp();
-		} else {
-			$mdpFinal = password_hash($mdp, PASSWORD_DEFAULT);
-		}
+        $utilisateur = new Utilisateur(
+            $ancienUser->getIdUtilisateur(),
+            $nom, $prenom, $mail, $mdpFinal, $date,
+            $ancienUser->getRoleA() ?: false
+        );
 
-		$utilisateur = new Utilisateur(
-			$ancienUser->getIdUtilisateur(),
-			$nom,
-			$prenom,
-			$mail,
-			$mdpFinal,
-			$date,
-			$ancienUser->getRoleA() ?: false 
-		);
+        $udb->modifUtilisateur($utilisateur);
+        $message = "Vos informations ont bien été mises à jour.";
+    }
 
-		$udb->modifUtilisateur($utilisateur);
-		$message = "Vos informations ont bien été mises à jour.";
-	}
-
-	$racine_path = '../';
-	$titre = "Modification effectuée !";
-	include($racine_path."view/header.php");
-
-
-echo "<p>$message</p>";
+    echo "<p>" . htmlspecialchars($message) . "</p>";
 ?>
-
 <div class="container mt-5 text-center">
-    <a href="../control/profil.php" class="btn btn-primary mt-3">Retour au profil</a>
+    <a href="<?php echo $racine_path; ?>control/profil.php" class="btn btn-primary mt-3">Retour au profil</a>
 </div>
-
-<?php include($racine_path."view/footer.php"); ?>
+<?php include($racine_path . "view/footer.php"); ?>

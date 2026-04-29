@@ -1,6 +1,4 @@
 <?php
-	session_start();
-
 	$racine_path = '../';
 	$titre = 'Connexion';
 

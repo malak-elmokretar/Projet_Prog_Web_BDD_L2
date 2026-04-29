@@ -5,6 +5,10 @@
         <a href="https://www.instagram.com" class="text-white ms-2" target="_blank" aria-label="Instagram">
           <i class="bi bi-instagram"></i>
         </a>
+        <a href="#" onclick="document.getElementById('bandeau-cookies').style.display='block'; return false;" 
+          class="text-white ms-2" aria-label="Gérer les cookies">
+          <i class="bi bi-cookie"></i>
+        </a>
       </p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
