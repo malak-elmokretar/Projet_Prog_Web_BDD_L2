@@ -1,8 +1,10 @@
 <?php
 session_start(); // session 
 
-$racine_path = '../../';
-require_once $racine_path . 'cookies.php';
+$racine_path = '../../';    //depuis admin
+$racine = '../../../';
+
+require_once $racine . 'cookies.php';
 
 require_once $racine_path . 'model/Connect.php';
 require_once $racine_path . 'model/UtilisateurDB.php';
@@ -26,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $utilisateur = $userModel->verifierConnexionA($mail, $mdp);
    
         if ($utilisateur) {
-            creerCookieSession($utilisateur->getId());
+            creerCookieSession($utilisateur->getIdUtilisateur());
             $_SESSION['id'] = $utilisateur->getIdUtilisateur();
             $_SESSION['nom'] = $utilisateur->getNom();
             header('Location: ../utilisateurs/profil.php');
