@@ -34,7 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($utilisateur) {
         // Connexion réussie : on crée le cookie de session
         creerCookieSession($utilisateur->getIdUtilisateur());
-        echo "<p>Bon retour parmi nous !</p>";
+        $_SESSION['user_id'] = $utilisateur->getIdUtilisateur();
+        $_SESSION['user_mail'] = $utilisateur->getMail();
+        header('Location: ' . $racine_path . 'control/profil.php');
+        exit();
     } else {
         echo "<p>Identifiants incorrects. <a href='" . $racine_path . "control/connexion.php'>Réessayer</a></p>";
     }

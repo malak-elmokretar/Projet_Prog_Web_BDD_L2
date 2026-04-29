@@ -1,7 +1,7 @@
 <?php
 	session_start();
-	if (!isset($_SESSION['id'])) {
-		header('Location: ../control/connexion.php');
+	if (!isset($_SESSION['user_id'])) {
+    	header('Location: ../control/connexion.php');
 		exit;
 	}
 
@@ -19,7 +19,7 @@
 
 	$udb = new UtilisateurDB($db);
 
-	$user = $udb->getUtilisateurById($_SESSION['id']);
+	$user = $udb->getUtilisateurById($_SESSION['user_id']);
 	include($racine_path."view/header.php");
 
 	$action = $racine_path."control/confirmation_modif.php";
