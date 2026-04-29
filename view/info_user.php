@@ -40,4 +40,8 @@
     <button type="submit" class="btn btn-danger mt-3">Supprimer mon compte</button>
   </form>
 
+  <form action="<?php echo $racine_path; ?>control/deconnexion.php" method="POST">
+    <button type="submit" class="btn btn-danger">Se déconnecter</button>
+  </form>
+  
 </div>
