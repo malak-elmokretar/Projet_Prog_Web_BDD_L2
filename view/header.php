@@ -26,7 +26,7 @@
             <h1 class="text-center flex-grow-1 mb-0 titre"><?php echo $titre; ?></h1>
             
             <div class="ms-auto d-flex align-items-center gap-2">
-                <?php if ($userId): ?>
+                <!-- <?php if ($userId): ?>
                     <span class="text-white">Connecté</span>
                     <a href="<?php echo $racine_path; ?>control/deconnexion.php" class="btn btn-outline-light btn-sm">
                         Se déconnecter
@@ -35,7 +35,7 @@
                     <a href="<?php echo $racine_path; ?>control/connexion.php" class="btn btn-outline-light btn-sm">
                         Se connecter
                     </a>
-                <?php endif; ?>
+                <?php endif; ?> -->
             </div>
 
             <?php include("menu.php"); ?>

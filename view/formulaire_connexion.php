@@ -14,8 +14,6 @@
       <label for="mdp" class="form-label">Mot de passe :</label>
       <input type="password" class="form-control" id="mdp" name="mdp" minlength="12" maxlength="50" required>
       <br>
-      <p><a href="<?php echo $racine_path.'control/mdp_oublie.php'; ?>">J'ai oublié mon mot de passe</a></p>
-      <br>
       <p>Pas encore de compte ? <a href="<?php echo $racine_path.'control/inscription.php'; ?>">S'inscrire</a></p>
     </div>
     <button type="submit" class="btn btn-primary">Se connecter</button>
