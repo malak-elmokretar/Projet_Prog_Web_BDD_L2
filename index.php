@@ -1,6 +1,8 @@
 <?php
 $titre = "Let's go"; 
 $racine_path = './';
+$racine = './';
+
 
 		
 /*view*/  include('./view/header.php');

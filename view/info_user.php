@@ -35,8 +35,9 @@
     <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
   </form>
 
-  <form action="<?php echo $racine_path.'control/confirmation_supp.php'; ?>" method="POST">
-    <input type="hidden" name="id" value="<?php echo $user->getIdUtilisateur(); ?>">  
+ <form action="<?php echo $racine_path.'control/confirmation_supp.php'; ?>" method="POST">
+    <input type="hidden" name="id" value="<?php echo $user->getIdUtilisateur(); ?>">
+    <input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">
     <button type="submit" class="btn btn-danger mt-3">Supprimer mon compte</button>
   </form>
 
