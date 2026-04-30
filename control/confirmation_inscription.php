@@ -1,52 +1,48 @@
 <?php
-$racine_path = '../';
-require_once $racine_path . 'admin/model/Connect.php';
-require_once $racine_path . 'admin/model/UtilisateurDB.php';
-require_once $racine_path . 'admin/class/Utilisateur.php';
+    $racine_path = '../';
+    $racine = '../';
 
-use model\Connect;
-use model\UtilisateurDB;
-use model\Utilisateur;
+    require_once $racine_path . 'admin/model/Connect.php';
+    require_once $racine_path . 'admin/model/UtilisateurDB.php';
+    require_once $racine_path . 'admin/class/Utilisateur.php';
+    require_once $racine_path . 'csrf.php';
 
-$connect=new Connect();
-$db=$connect->getConn();
-$userModel=new UtilisateurDB($db);
+    use model\Connect;
+    use model\UtilisateurDB;
+    use model\Utilisateur;
 
-$titre="Inscription";
-include($racine_path . "view/header.php");
+    $titre = "Inscription";
+    include($racine_path . "view/header.php"); // démarre la session
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!verifierTokenCsrf($_POST['csrf_token'] ?? '')) {
+        http_response_code(403);
+        die("Requête invalide.");
+    }
+    supprimerTokenCsrf();
 
-    $nom= $_POST['nom'] ?? '';
-    $prenom= $_POST['prenom'] ?? '';
-    $mail= $_POST['mail'] ?? '';
-    $mdp= $_POST['mdp'] ?? '';
-    $date_naissance= $_POST['date_naissance'] ?? '';
-    $role_a= 0; 
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $connect = new Connect();
+        $db = $connect->getConn();
+        $userModel = new UtilisateurDB($db);
 
-    $utilisateur= new Utilisateur(2, $nom, $prenom, $mail, $mdp, $date_naissance, 0);
-    $success= $userModel->inscription($utilisateur);
+        $nom           = $_POST['nom'] ?? '';
+        $prenom        = $_POST['prenom'] ?? '';
+        $mail          = $_POST['mail'] ?? '';
+        $mdp           = $_POST['mdp'] ?? '';
+        $date_naissance = $_POST['date_naissance'] ?? '';
 
-   $to = $mail;
-	$subject = "LET'S GO - BIENVENUE";
-	$message = "Cher-e ".$nom. " ".$prenom." Bienvenue chez LET'S GO.";
-	$headers = array(
-		'From' => 'do-not-reply@letsgo.fr',
-		'Reply-To' => "do-not-reply@letsgo.fr",
-		'X-Mailer' => 'PHP/' . phpversion()
-	);
+        $utilisateur = new Utilisateur(2, $nom, $prenom, $mail, $mdp, $date_naissance, 0);
+        $success = $userModel->inscription($utilisateur);
 
-    if ($success){
-        echo "Votre compte a bien été créé. Un e-mail de confirmation vous a été envoyé à l'adresse".$mail."</p>";
-        mail($to, $subject, $message, $headers);
-        echo "<a href='" . $racine_path . "control/connexion.php' class='btn btn-primary mt-3'>Se connecter</a>";
+        if ($success) {
+            echo "<p>Votre compte a bien été créé.</p>";
+            echo "<a href='" . $racine_path . "control/connexion.php' class='btn btn-primary mt-3'>Se connecter</a>";
+        } else {
+            echo "<p>Erreur inscription.</p>";
+        }
     } else {
-        echo "<p>Erreur inscription.</p>";
+        echo "<p>Erreur requête.</p>";
     }
 
-} else {
-    echo "<p>Erreur requête </p>";
-}
-
-include($racine_path . "view/footer.php");
+    include($racine_path . "view/footer.php");
 ?>

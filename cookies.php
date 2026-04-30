@@ -20,15 +20,3 @@ function supprimerConsentement(): void {
     setcookie('cookie_preferences',  '', time() - 3600, COOKIE_CHEMIN);
     setcookie('cookie_statistiques', '', time() - 3600, COOKIE_CHEMIN);
 }
-
-
-function creerCookieSession(int $userId): void {
-    setcookie('user_session', $userId, COOKIE_DUREE, COOKIE_CHEMIN);
-}
-
-function getSessionUtilisateur(): ?int {
-    return isset($_COOKIE['user_session']) ? (int)$_COOKIE['user_session'] : null;
-}
-
-
-?>

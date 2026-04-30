@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$racine_path = '../';
+	$racine = '../';
 	$titre = "Merci pour votre message";
 	/*view*/ include($racine_path."view/header.php");
 	

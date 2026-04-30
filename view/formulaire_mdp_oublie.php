@@ -1,6 +1,7 @@
 <div class="container mt-4">
 	<form action="<?php echo "$action"; ?>" method="<?php echo "$method"; ?>" class="mx-auto">
-	
+    <input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">
+
 		<div class="mb-3">
 			<label for="mail" class="form-label">Adresse Mail</label>	
 			<input type="email"class="form-control" id="mail" name="mail" required>	

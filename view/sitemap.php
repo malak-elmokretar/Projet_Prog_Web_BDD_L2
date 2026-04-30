@@ -7,7 +7,7 @@
     <li>Destinations
         <ul>
             <li><a href="<?php echo $racine_path.'control/destinations.php';?>">Toutes les destinations</a></li>
-            <li><a href="<?php echo $racine_path.'control/destination.php?id=1';?>">Détail destination</a></li>
+            <li><a href="<?php echo $racine_path.'control/destination.php?id=4';?>">Détail destination</a></li>
         </ul>
     </li>
 

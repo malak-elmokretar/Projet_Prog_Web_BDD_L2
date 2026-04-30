@@ -1,19 +1,18 @@
 <?php
 	$racine_path = '../';
+	$racine = '../';
+
 	$titre = 'Connexion';
+
 	include($racine_path."view/header.php");
-	
-	$action = $racine_path."control/confirmation_connexion.php";
-	$method = "POST";
-	
-	/*view*/ include($racine_path."view/formulaire_connexion.php");
 
-		// À faire : une fois l'accès à la base de données :
-		// vérifier si l'e-mail est renseigné
-		// vérifier si le mot de passe est renseigné
-		// vérifier si l'e-mail et le mdp correspondent
-		// envoyer mail -> verifier si l'envoi a fonctionné
-			// confirmation de l'envoie
-	/*view*/ include($racine_path."view/footer.php");
+	if (isset($_SESSION['user_id'])) {
+		echo "<p>Vous êtes déjà connecté. <a href='profil.php'>Accéder à mon profil</a></p>";
+	} else {
+		$action = $racine_path."control/confirmation_connexion.php";
+		$method = "POST";
+		include($racine_path."view/formulaire_connexion.php");
+	}
 
+	include($racine_path."view/footer.php");
 ?>

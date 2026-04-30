@@ -1,5 +1,6 @@
 <?php
 	$racine_path = '../';
+	$racine = $racine_path;
 	$titre = 'Metions légales';
 	include($racine_path."view/header.php");
 	
