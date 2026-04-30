@@ -2,8 +2,7 @@
   <form action="<?php echo $action;?>" method="<?php echo $method;?>">
    
     <div class="mb-3">
-      <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-    </div>
+    <input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">    </div>
 
     <div class="mb-3">
       <label for="email" class="form-label">Adresse e-mail :</label>

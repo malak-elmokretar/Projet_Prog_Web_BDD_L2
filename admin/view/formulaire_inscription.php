@@ -3,9 +3,7 @@
   <form action="<?php echo $action;?>" method="<?php echo $method;?>">
 
     <div class="mb-3">
-      <input type="hidden" name="id_csrf" value="1">
-      <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-    </div>
+<input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">    </div>
 
     <div class="mb-3">
       <label for="nomUser" class="form-label">Nom :</label>

@@ -9,7 +9,7 @@ if (!consentementDonne()) : ?>
             🍪 Ce site utilise des cookies. Choisissez ceux que vous acceptez :
         </p>
 
-        <form method="POST" action="<?php echo $racine_path ?>control/cookie.php">
+        <form method="POST" action="<?php echo $racine_path.'control/cookie.php';?>">
 
             <div class="d-flex flex-column flex-md-row gap-3 mb-3">
 

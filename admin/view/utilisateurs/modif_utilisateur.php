@@ -5,7 +5,7 @@
     <input type="hidden" name="id" value="<?php echo $utilisateur->getIdUtilisateur(); ?>">
 
     <div class="mb-3">
-			<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+<input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">
     </div>
 
     <div class="mb-3">
