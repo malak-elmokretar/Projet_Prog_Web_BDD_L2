@@ -1,5 +1,7 @@
 <?php
     $racine_path = '../';
+    $racine = '../';
+
     $titre = 'Inscription';
     include($racine_path."view/header.php"); // démarre la session
 

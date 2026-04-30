@@ -1,4 +1,6 @@
-<?php if (!consentementDonne()) : ?>
+<?php 
+require_once $racine_path.'cookies.php';
+if (!consentementDonne()) : ?>
 
 <div id="bandeau-cookies" class="fixed-bottom bg-dark text-white p-3">
     <div class="container">
@@ -7,7 +9,7 @@
             🍪 Ce site utilise des cookies. Choisissez ceux que vous acceptez :
         </p>
 
-        <form method="POST" action="<?php echo $racine_path; ?>/control/cookieContr.php">
+        <form method="POST" action="<?php echo $racine_path ?>control/cookie.php">
 
             <div class="d-flex flex-column flex-md-row gap-3 mb-3">
 

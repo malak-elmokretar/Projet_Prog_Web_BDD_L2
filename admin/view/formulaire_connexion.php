@@ -2,18 +2,19 @@
   <form action="<?php echo $action;?>" method="<?php echo $method;?>">
    
     <div class="mb-3">
+    <input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">    </div>
+
+    <div class="mb-3">
       <label for="email" class="form-label">Adresse e-mail :</label>
       <div class="input-group">
         <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="email" class="form-control" id ="email" name="mail" maxlength="50" required>
+        <input type="email" name="mail" class="form-control" id="email" maxlength="50" required>
       </div>
     </div>
 
     <div class="mb-3">
       <label for="mdp" class="form-label">Mot de passe :</label>
-      <input type="password" class="form-control" id="mdp" name="mdp" minlength="12" maxlength="50" required>
-      <br>
-      <p><a href="<?php echo $racine_path.'control/mdp_oublie.php'; ?>">J'ai oublié mon mot de passe</a></p>
+      <input type="password" name="mdp" class="form-control" id="mdp" minlength="12" maxlength="50" required>
       <br>
       <p>Pas encore de compte ? <a href="<?php echo $racine_path.'control/inscription.php'; ?>">S'inscrire</a></p>
     </div>

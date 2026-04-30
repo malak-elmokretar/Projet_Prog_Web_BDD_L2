@@ -1,5 +1,6 @@
 <?php
     $racine_path = '../';
+    $racine = '../';
 
     require_once $racine_path . 'admin/model/Connect.php';
     require_once $racine_path . 'admin/model/UtilisateurDB.php';

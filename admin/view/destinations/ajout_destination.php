@@ -2,6 +2,9 @@
   <form action="<?php echo $action; ?>" method="<?php echo $method; ?>" enctype="multipart/form-data">
 
     <div class="mb-3">
+<input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">    </div>
+
+    <div class="mb-3">
       <label for="nom" class="form-label">Nom de la destination</label>
       <input type="text" class="form-control" id="nom" name="nom" required >
     </div>

@@ -2,6 +2,7 @@
 
   <form action="<?php echo $action; ?>" method="<?php echo $method; ?>">
     <input type="hidden" name="id" value="<?php echo $user->getIdUtilisateur(); ?>">
+    <input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">
 
     <div class="mb-3">
       <label for="nomUser" class="form-label">Nom :</label>
@@ -22,7 +23,7 @@
       <label for="email" class="form-label">Adresse e-mail :</label>
       <div class="input-group">
         <span class="input-group-text">@</span>
-        <input type="email" class="form-control" id="email" name="mail" value="<?php echo htmlspecialchars($user->getMail()); ?>"  required>
+        <input type="email" class="form-control" id="email" name="mail" value="<?php echo htmlspecialchars($user->getMail()); ?>" required>
       </div>
     </div>
 
@@ -34,11 +35,14 @@
     <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
   </form>
 
-  <form action="<?php echo $racine_path.'control/confirmation_supp.php'; ?>" method="POST">
-    <input type="hidden" name="id" value="<?php echo $user->getIdUtilisateur(); ?>">  
+  <form action="<?php echo $racine_path.'control/confirmations/confirmation_supp_user.php'; ?>" method="POST">
+    <input type="hidden" name="id" value="<?php echo $user->getIdUtilisateur(); ?>">
+    <input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">
     <button type="submit" class="btn btn-danger mt-3">Supprimer mon compte</button>
   </form>
- <form action="<?php echo $racine_path . 'control/deconnexion.php'; ?> " method="POST">
+
+  <form action="<?php echo $racine_path . 'control/deconnexion.php'; ?>" method="POST">
     <button type="submit" class="btn btn-danger">Se déconnecter</button>
   </form>
+
 </div>

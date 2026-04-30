@@ -6,7 +6,7 @@ class Connect{
     public function __construct(){
         $servername = "localhost";
         $username = "uapv2501798"; //login
-        $password = "****"; //mon mdp
+        $password = "Tekno"; //mon mdp
         //"postgresql";
         $port = 5432;
 

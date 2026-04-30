@@ -1,5 +1,7 @@
 <?php
     $racine_path = '../';
+    $racine  = '../';
+
     require_once $racine_path . 'csrf.php';
 
     $titre = "Merci pour votre message";

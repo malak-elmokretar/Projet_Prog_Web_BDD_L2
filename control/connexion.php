@@ -1,5 +1,7 @@
 <?php
 	$racine_path = '../';
+	$racine = '../';
+
 	$titre = 'Connexion';
 
 	include($racine_path."view/header.php");

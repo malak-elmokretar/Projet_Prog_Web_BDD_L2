@@ -1,19 +1,13 @@
 <?php
-	session_start();
+    $racine_path = '../';
+    $racine  = '../';
+    $titre = 'Mot de passe oublié';
 
-	$racine_path = '../';
-	$titre = 'Formulaire de contact';
-	/*view*/ include($racine_path."view/header.php");
-	
-	$action = $racine_path."control/confirmation_mdp.php";
-	$method = "POST";
-	
-	/*view*/ include($racine_path."view/formulaire_mdp_oublie.php");
+    include($racine_path."view/header.php"); // démarre la session
 
-		// À faire : 
-        // - Vérifier si le compte existe (= l'email existe dans la bdd)
-        // - Gérer l'envoi un mail automatique pour changer son mdp
-	
-	/*view*/ include($racine_path."view/footer.php");
+    $action = $racine_path."control/confirmation_mdp.php";
+    $method = "POST";
 
+    include($racine_path."view/formulaire_mdp_oublie.php");
+    include($racine_path."view/footer.php");
 ?>

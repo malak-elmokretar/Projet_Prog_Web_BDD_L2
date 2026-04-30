@@ -5,6 +5,10 @@
     <input type="hidden" name="id" value="<?php echo $utilisateur->getIdUtilisateur(); ?>">
 
     <div class="mb-3">
+<input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">
+    </div>
+
+    <div class="mb-3">
       <label for="nom" class="form-label">Nom :</label>
       <input type="text" class="form-control" id="nom" name="nom"
              value="<?php echo htmlspecialchars($utilisateur->getNom()); ?>"
@@ -32,6 +36,11 @@
                value="<?php echo htmlspecialchars($utilisateur->getMail()); ?>"
                minlength="3" maxlength="50" required>
       </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="mdp" class="form-label">Mot de passe :</label>
+      <input type="password" class="form-control" id="mdp" name="mdp" minlength="2" maxlength="50">
     </div>
 
     <div class="form-check mb-3">

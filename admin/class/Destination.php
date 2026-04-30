@@ -104,7 +104,7 @@ class Destination implements DestinationInterface{
             <td>{$this->descr}</td>
             <td>
                 <a href='destination.php?id={$this->id_destination}' class='btn btn-primary'>Modifier</a>
-                <a href='../confirmations/confirmation_supp.php?id={$this->id_destination}' class='btn btn-danger'>Supprimer</a>
+                <a href='../confirmations/confirmation_supp_destination.php?id={$this->id_destination}' class='btn btn-danger'>Supprimer</a>
             </td>
         </tr>
     ";

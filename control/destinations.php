@@ -3,6 +3,8 @@
     use model\DestinationDB;
 
     $racine_path = '../';
+    $racine = '../';
+
 
     require_once __DIR__ . '/../admin/model/Connect.php';
     require_once __DIR__ . '/../admin/model/DestinationDB.php';

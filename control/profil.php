@@ -1,5 +1,6 @@
 <?php
     $racine_path = '../';
+      $racine = '../'; 
 
     require_once($racine_path . "admin/model/Connect.php");
     require_once($racine_path . "admin/model/UtilisateurDB.php");
@@ -8,10 +9,11 @@
     use model\UtilisateurDB;
 
     $titre = 'Mon profil';
-    include($racine_path . "view/header.php"); 
+    include($racine_path . "view/header.php"); // démarre la session
 
     if (!isset($_SESSION['user_id'])) {
-        echo "<script>window.location.href='../control/connexion.php';</script>";
+        echo "<p>Vous devez être connecté pour accéder à cette page. <a href='../control/connexion.php'>Se connecter</a></p>";
+        include($racine_path . "view/footer.php");
         exit;
     }
 

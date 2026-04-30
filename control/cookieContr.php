@@ -1,5 +1,7 @@
 <?php
 $racine_path = '../';
+$racine  = '../';
+
 require_once $racine_path . 'cookies.php';
 
 $action = $_POST['action'] ?? '';

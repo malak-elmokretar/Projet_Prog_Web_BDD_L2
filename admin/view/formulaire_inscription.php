@@ -1,7 +1,10 @@
 <div class="container mt-5 d-flex flex-column align-items-center text-center">
 
   <form action="<?php echo $action;?>" method="<?php echo $method;?>">
-    
+
+    <div class="mb-3">
+<input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">    </div>
+
     <div class="mb-3">
       <label for="nomUser" class="form-label">Nom :</label>
       <input type="text" class="form-control" id="nomUser" name="nom" minlength="2" maxlength="50" required>

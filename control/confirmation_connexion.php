@@ -1,6 +1,8 @@
 <?php
     session_start(); // ← avant tout le reste
     $racine_path = '../';
+    $racine = '../';
+
     require_once $racine_path . 'csrf.php';
     require_once $racine_path . 'cookies.php';
     require_once $racine_path . 'admin/model/Connect.php';

@@ -1,30 +1,30 @@
 <?php
-	session_start();
-	if (!isset($_SESSION['id'])) {
-		header('Location: ../connexion.php');
-		exit;
-	}
+    $racine_path = '../../';
+    $racine = '../../../';
 
-	$racine_path = '../../';
-	$titre = 'Mon profil';
-	
-	require_once($racine_path . "model/Connect.php");
-	require_once($racine_path . "model/UtilisateurDB.php");
+    require_once($racine_path . "model/Connect.php");
+    require_once($racine_path . "model/UtilisateurDB.php");
 
-	use model\Connect;
-	use model\UtilisateurDB;
+    use model\Connect;
+    use model\UtilisateurDB;
 
-	$connect = new Connect();
-	$db = $connect->getConn();
+    $titre = 'Mon profil';
+    include($racine_path."view/base/header.php"); // démarre la session
 
-	$udb = new UtilisateurDB($db);
+    if (!isset($_SESSION['user_id'])) {
+        echo "<p>Vous devez être connecté pour accéder à cette page. <a href='../../control/connexion.php'>Se connecter</a></p>";
+        include($racine_path."view/base/footer.php");
+        exit;
+    }
 
-	$user = $udb->getUtilisateurById($_SESSION['id']);
-	include($racine_path."view/base/header.php");
+    $connect = new Connect();
+    $db = $connect->getConn();
+    $udb = new UtilisateurDB($db);
+    $user = $udb->getUtilisateurById($_SESSION['user_id']);
 
-	$action = $racine_path."control/confirmations/confirmation_modif_user.php";
-	$method = "POST";
+    $action = $racine_path."control/confirmations/confirmation_modif_user.php";
+    $method = "POST";
 
-	include($racine_path."view/utilisateurs/info_user.php");
-	include($racine_path."view/base/footer.php");
+    include($racine_path."view/utilisateurs/info_user.php");
+    include($racine_path."view/base/footer.php");
 ?>

@@ -1,7 +1,8 @@
 <div class="container mt-5 d-flex flex-column align-items-center text-center">
   <form action="<?php echo $action;?>" method="<?php echo $method;?>" enctype="multipart/form-data">
     
-    <input type="hidden" name="id" value="<?php echo $id;?>">
+    <div class="mb-3">
+<input type="hidden" name="csrf_token" value="<?php echo genererTokenCsrf(); ?>">    </div>
 
     <div class="mb-3">
       <label for="nom" class="form-label">Nom de la destination</label>
